@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Finds the movies playing at a specific theater.}
   spec.description   = %q{Finds the movies playing at a specific theater.}
-  spec.homepage      = "http://www.example.com"
+  spec.homepage      = "https://github.com/jake0988/rs_top_artists"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 

@@ -23,8 +23,8 @@ class RsTopArtists::Artist
             @@all << self
         end
     
-        def self.get_artists
-            RsTopArtists::Scraper.scrape_artists(self) if @artists.empty?
+        # def self.get_artists
+        #     # RsTopArtists::Scraper.scrape_artists(self) if @artists.empty?
     
-        end
+        # end
     end

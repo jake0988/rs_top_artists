@@ -1,40 +1,36 @@
 class RsTopArtists::CLI
+    @@extra_list = []
 
     def call
-        @artist = "all WHAT for not"
         @count = 0
-        RsTopArtists::Scraper.scrape_artists
+        # RsTopArtists::Scraper.scrape_artists
         welcome       
-        @input = ""
-        unless @input == "exit" 
+        # @input = ""
+        # until @input == "exit" 
         get_artists
         get_user_input
         list_artists
         select_artist
-        secret_method_collect
+        extra_method_collect
         another_artist
         goodbye
-        end
+        # end
     end
 
     def second_plus_call
         @count += 1
-        if @count == 3
+        if @count == 2
             @count += 1
-            secret_method
+            extra_method
         end
         list_artists
         select_artist
-        secret_method_collect
+        extra_method_collect
         another_artist
         goodbye
     end
 
     def welcome
-        rando = @artist.split(/\W+/)
-        rando.shuffle!
-        rando.join
-        puts rando
         puts "\n\nWelcome to Rolling Stone's top 100 artist list."
     end
 
@@ -43,7 +39,7 @@ class RsTopArtists::CLI
     end
 
     def get_user_input
-        puts "\nType 'y' if you would like to see this questionable list. Type 'n' if you've thought better of it."
+        puts "\nType 'y' if you would like to see this list. Type 'n' if you'd like to exit."
         bool = gets.strip
             if bool == "y"
                 return
@@ -94,12 +90,12 @@ class RsTopArtists::CLI
         end        
     end
 
-    def secret_method_collect
-        RsTopArtists::Secret.all << @artist    
+    def extra_method_collect
+        RsTopArtists::Extra.all << @artist    
     end
 
-    def secret_method
-        RsTopArtists::Secret.new
+    def extra_method
+        RsTopArtists::Extra.new
     end        
 
     def another_artist
@@ -113,13 +109,6 @@ class RsTopArtists::CLI
             puts "\nnot an accepted input, please try again."
             return another_artist
         end
-    end
-
-  
-
-    def random(string)
-        puts rand(string)
-        
     end
 
     def goodbye

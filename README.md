@@ -22,8 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
-
+Run the exec file rs_top_artists. User will be prompted if they would like to view the Rolling Stone's Top 100 Artist list. If not, they will exit the program with a goodbye. If yes, they will be given a list of the artists. Then the user can select by number which artist they would like more information on. Once selected, a paragraph about the artist
+is printed to stdout. User is then prompted if they would like to see the list again and select another artist to view. If this is done three times consecutively the user is brought to selection by group. Here the user can select a group of 10 artists to see a list of 10 artists together. Then the program exits.
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

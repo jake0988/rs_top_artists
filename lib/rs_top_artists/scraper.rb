@@ -1,5 +1,4 @@
 class RsTopArtists::Scraper
-    @@all = []
 
     def self.scrape_artists
         url = 'https://www.rollingstone.com/interactive/lists-100-greatest-songwriters/'
@@ -11,4 +10,6 @@ class RsTopArtists::Scraper
             info = info.text.strip.gsub(/\s+/, " ")
             RsTopArtists::Artist.new(name, info)
         end
-     end
+    end
+     
+end
